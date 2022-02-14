@@ -1,0 +1,29 @@
+
+version: '3.8'
+services:
+  loan_api:
+    container_name: django_loan_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - loan_db
+
+  loan_db:
+    container_name: django_loan_api_db
+    image: mysql:5.7.22
+    restart: always
+    environment:
+      MYSQL_DATABASE: django_loan
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 33066:3306
+
