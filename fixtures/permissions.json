@@ -1,0 +1,44 @@
+[
+    {
+        "model": "users.permission",
+        "pk": 1,
+        "fields": {
+            "name": "view_users"
+        }
+    },
+    {
+        "model": "users.permission",
+        "pk": 2,
+        "fields": {
+            "name": "edit_users"
+        }
+    },
+    {
+        "model": "users.permission",
+        "pk": 3,
+        "fields": {
+            "name": "view_roles"
+        }
+    },
+    {
+        "model": "users.permission",
+        "pk": 4,
+        "fields": {
+            "name": "edit_roles"
+        }
+    },
+    {
+        "model": "users.permission",
+        "pk": 5,
+        "fields": {
+            "name": "view_loans"
+        }
+    },
+    {
+        "model": "users.permission",
+        "pk": 6,
+        "fields": {
+            "name": "edit_loans"
+        }
+    }
+]

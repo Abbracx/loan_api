@@ -1,0 +1,74 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "last_login": null,
+            "is_superuser": true,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-11-10T11:48:08.084Z",
+            "first_name": "Admin",
+            "last_name": "Admin",
+            "email": "admin@admin.com",
+            "password": "pbkdf2_sha256$216000$ENeYa1J9BOrD$cqT41Xdqr8zgGrEC9SVa8e69WZOgdspNhvzbUZAGfGc=",
+            "role": 1,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 2,
+        "fields": {
+            "last_login": null,
+            "is_superuser": true,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-11-10T11:48:08.084Z",
+            "first_name": "Head",
+            "last_name": "Head",
+            "email": "head@head.com",
+            "password": "pbkdf2_sha256$216000$ENeYa1J9BOrD$cqT41Xdqr8zgGrEC9SVa8e69WZOgdspNhvzbUZAGfGc=",
+            "role": 2,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 3,
+        "fields": {
+            "last_login": null,
+            "is_superuser": true,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-11-10T11:48:08.084Z",
+            "first_name": "Moderator",
+            "last_name": "Moderator",
+            "email": "moderator@moderator.com",
+            "password": "pbkdf2_sha256$216000$ENeYa1J9BOrD$cqT41Xdqr8zgGrEC9SVa8e69WZOgdspNhvzbUZAGfGc=",
+            "role": 3,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 4,
+        "fields": {
+            "last_login": null,
+            "is_superuser": true,
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2020-11-10T11:48:08.084Z",
+            "first_name": "Loanee",
+            "last_name": "Loanee",
+            "email": "loanee@loanee.com",
+            "password": "pbkdf2_sha256$216000$ENeYa1J9BOrD$cqT41Xdqr8zgGrEC9SVa8e69WZOgdspNhvzbUZAGfGc=",
+            "role": 4,
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

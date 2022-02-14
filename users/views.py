@@ -2,6 +2,10 @@ from django.shortcuts import render
 from rest_framework import exceptions
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.views import APIView
+
+from users.authentication import JWTAuthentication, generate_access_token  
 from users.serializers import UserSerializer
 from .models import User
 
@@ -32,7 +36,36 @@ def login(request):
     if not user.check_password(password):
         raise exceptions.AuthenticationFailed('password is incorrect!')
 
-    return Response('success')
+    response = Response()
+    # generate the token
+    token = generate_access_token(user) 
+
+    # Set it as a http only cookie.
+    response.set_cookie(key='jwt', value=token, httponly=True)
+    response.data = {
+        'jwt': token
+    }
+    return response
+
+@api_view(['POST'])
+def logout(request):
+    response = Response()
+    response.delete_cookie(key='jwt')
+    response.data = {
+        'message': 'Success'
+    }
+    return response
+class AuthenticatedUser(APIView):
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return Response({
+            'data': serializer.data
+        })
+
+
 
 @api_view(['GET'])
 def users(request):
